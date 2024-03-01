@@ -1,3 +1,5 @@
+.SUFFIXES:
+
 AS = arm-linux-gnueabi-as
 LD = arm-linux-gnueabi-ld
 ASFLAGS =
