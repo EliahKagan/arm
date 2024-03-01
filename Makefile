@@ -1,4 +1,7 @@
+ifdef K
 .SECONDARY:
+endif
+
 .SUFFIXES:
 
 AS = arm-linux-gnueabi-as
