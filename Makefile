@@ -1,3 +1,4 @@
+.SECONDARY:
 .SUFFIXES:
 
 AS = arm-linux-gnueabi-as
