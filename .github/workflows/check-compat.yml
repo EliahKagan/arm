@@ -1,0 +1,17 @@
+name: Check CI runner compatibility with ARMv7 programs
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04-arm
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Try to run the tracked ARMv7 binary
+        run: |
+          set +e -x
+          ./hello
+          test "$?" -eq 42
