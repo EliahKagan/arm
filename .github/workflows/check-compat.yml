@@ -10,7 +10,13 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Try to run the tracked ARMv7 binary
+      - name: Disable binfmt_misc to show the binary runs unemulated
+        run: |
+          path='/proc/sys/fs/binfmt_misc/status'
+          echo 0 | sudo tee -- "$path"
+          grep -Fxq disabled -- "$path"
+
+      - name: Run the tracked ARMv7 binary
         run: |
           set +e -x
           ./hello
