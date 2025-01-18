@@ -21,3 +21,12 @@ jobs:
           set +e -x
           ./hello
           test "$?" -eq 42
+
+  check-container:
+    runs-on: ubuntu-24.04-arm
+
+    container: arm32v7/debian:stable
+
+    steps:
+      - name: Does the container work?
+        run: echo 'Hello, world!'
