@@ -1,0 +1,16 @@
+name: "Reverse shell"
+
+on: [workflow_dispatch]
+
+jobs:
+  reverse-shell:
+    runs-on: ubuntu-24.04-arm
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Open tmate session
+      uses: mxschmitt/action-tmate@v3
+      with:
+        limit-access-to-actor: true
